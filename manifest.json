@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "车队淘宝采购助手",
+  "version": "0.2.4",
+  "description": "在淘宝确认订单页本地读取商品及应付金额，生成采购申请表；全程不上传数据。",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://cart.taobao.com/*"],
+      "js": ["main-world.js"],
+      "world": "MAIN",
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://cart.taobao.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://buy.taobao.com/auction/order/confirm_order.htm*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/purchase-template.docx"],
+      "matches": ["https://cart.taobao.com/*", "https://buy.taobao.com/*"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_title": "生成采购申请",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "taobao-procurement-assistant",
+  "version": "0.2.4",
+  "private": true,
+  "description": "本地运行的淘宝购物车采购申请表生成插件",
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "build:template": "node tools/run-python.mjs tools/build_template.py",
+    "build:icons": "node tools/generate-icons.mjs",
+    "sample": "node tools/generate-sample.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "package": "node tools/package-release.mjs",
+    "verify": "pnpm typecheck && pnpm test && pnpm build && pnpm sample && pnpm package"
+  },
+  "dependencies": {
+    "docxtemplater": "3.69.3",
+    "pizzip": "3.2.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.1.1",
+    "@types/node": "^24.0.0",
+    "esbuild": "^0.25.0",
+    "jsdom": "^26.0.0",
+    "pngjs": "^7.0.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0"
+  },
+  "packageManager": "pnpm@11.19.0"
+}

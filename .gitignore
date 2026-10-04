@@ -1,0 +1,8 @@
+node_modules/
+dist/
+release/*.zip
+.build/
+.codex_qa_725_docx/
+coverage/
+*.log
+.DS_Store

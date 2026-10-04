@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "configVersion": "1.0.0",
+  "teamName": "方程式赛车队",
+  "departments": ["电控", "机械", "车身", "运营"],
+  "people": ["示例组长", "示例队长", "示例负责老师"],
+  "department": "电控",
+  "leader": "示例组长",
+  "captain": "示例队长",
+  "teacher": "示例负责老师",
+  "annualBudgetCents": 2000000,
+  "budgetPolicy": "年度预算－目前金额＝剩余金额；本次申请金额不自动并入目前金额",
+  "templateVersion": "1.0.0"
+}
